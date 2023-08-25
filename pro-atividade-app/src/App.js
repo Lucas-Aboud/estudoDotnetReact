@@ -1,34 +1,47 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
 
+
+let initialState = [
+  {
+    id: 1,
+    descrição: 'Primeira atividade',
+  },
+]
+
 function App() {
-  const atividade = [
-    {
-      'id':1,
-      'descrição': 'Primeira atividade',
-    },
-    {
-      'id':2,
-      'descrição': 'Segunda atividade',
-    },
-    {
-      'id':3,
-      'descrição': 'Terceira atividade',
-    },
-  ]
+  const [atividades, setAtividades] = useState(initialState)
+
+  function addAtividade(e) {
+    e.preventDefault();
+    
+    const atividade = {
+      id: document.getElementById('id').value,
+      descrição: document.getElementById('descrição').value,
+    }
+    console.log(atividades);
+    setAtividades([...atividades], {...atividade});
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <ul>
-          <li>{atividade[0].id} {atividade[0].descrição}</li>
-          <li>{atividade[1].id} {atividade[1].descrição}</li>
-          <li>{atividade[2].id} {atividade[2].descrição}</li>
-          <li>Quarta Atividade</li>
+    <>
+      <form>
+        <input id="id" type='text' placeholder='Id' />
+        <input id='descrição' type='text' placeholder='descrição' />
+        <button onClick={addAtividade}> + Atividade</button>  
+      </form>
+
+      <div className="mt-3">
+        <ul className="list-group" >
+          {atividades.map(ativ => (
+            <li key={ativ.id} className="list-group-item">
+              {ativ.id} - {ativ.descrição}
+            </li>
+          ))}
         </ul>
-      </header>
-    </div>
+      </div>
+    </>
   );
 }
 
