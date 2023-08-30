@@ -21,28 +21,67 @@ function App() {
       descrição: document.getElementById('descrição').value,
     }
     console.log(atividades);
-    setAtividades([...atividades], {...atividade});
+    setAtividades([...atividades, {...atividade}]);
   }
 
   return (
     <>
-      <form>
-        <input id="id" type='text' placeholder='Id' />
-        <input id='descrição' type='text' placeholder='descrição' />
-        <button onClick={addAtividade}> + Atividade</button>  
-      </form>
+      <div className="div justify-content-center ms-5 me-5 pt-5">
+        <form className='row g-3'>
+          <div className="col-md-6">
+            <label for="inputEmail4" className="form-label">ID:</label>
+            <input id="id" type="text" className="form-control" placeholder='Nº Id...' />
+          </div>
+          <div className="col-md-6">
+            <label for="inputEmail4" className="form-label">Descrição:</label>
+            <input id="descrição" type="text" className="form-control" placeholder='Descrição'/>
+          </div>
+          <hr />
+          <div className='col-12'>
+            <button 
+              className='btn-outline-secondary' 
+              onClick={addAtividade}
+            > 
+              + Atividade
+            </button>  
+          </div>
+        </form>
 
-      <div className="mt-3">
-        <ul className="list-group" >
-          {atividades.map(ativ => (
-            <li key={ativ.id} className="list-group-item">
-              {ativ.id} - {ativ.descrição}
-            </li>
-          ))}
-        </ul>
+        <div className="mt-3">
+            {atividades.map(ativ => (
+              <div key={ativ.id} className="card mb-2 shadow-sm">
+                <div class="card-body">
+                  <div className= "d-flex justify-content-between">
+                    <h5 className='card-tittle'>
+                    <span className="badge bg-secondary me-1">{ativ.id}</span>
+                    - título
+                    </h5>
+                    <h6>
+                      Prioridade: 
+                      <span className='ms-1 text-black'>
+                        <i className='me-1 far fa-smile'></i>
+                        Normal
+                      </span>
+                    </h6>
+                  </div>
+                  <p class="card-text">{ativ.descrição}</p>
+                  <div className="d-flex justify-content-end pt-2 m-0 border-top">
+                    <button className="btn btn-sm btn-outline-primary me-2">
+                      <i className='fas fa-pen me-2'></i>
+                      Editar
+                    </button>
+                    <button className="btn btn-sm btn-outline-danger me-2">
+                      <i className='fas fa-trash me-2'></i>
+                      Deletar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     </>
-  );
+  )
 }
 
 export default App;
