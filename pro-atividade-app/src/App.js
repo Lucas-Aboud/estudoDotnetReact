@@ -6,6 +6,8 @@ import './App.css';
 let initialState = [
   {
     id: 1,
+    prioridade: 'Baixa',
+    titulo: 'Primeira atividade',
     descrição: 'Primeira atividade',
   },
 ]
@@ -18,7 +20,10 @@ function App() {
     
     const atividade = {
       id: document.getElementById('id').value,
+      prioridade: document.getElementById('prioridade').value,
+      titulo: document.getElementById('titulo').value,
       descrição: document.getElementById('descrição').value,
+
     }
     console.log(atividades);
     setAtividades([...atividades, {...atividade}]);
@@ -29,13 +34,48 @@ function App() {
       <div className="div justify-content-center ms-5 me-5 pt-5">
         <form className='row g-3'>
           <div className="col-md-6">
-            <label for="inputEmail4" className="form-label">ID:</label>
-            <input id="id" type="text" className="form-control" placeholder='Nº Id...' />
+            <label className="form-label">
+              ID:
+            </label>
+            <input 
+              id="id" 
+              type="text" 
+              className="form-control" 
+              placeholder='Nº Id...' 
+            />
           </div>
           <div className="col-md-6">
-            <label for="inputEmail4" className="form-label">Descrição:</label>
-            <input id="descrição" type="text" className="form-control" placeholder='Descrição'/>
+            <label className="form-label">
+              Descrição: 
+            </label>
+            <input 
+              id="descrição" 
+              type="text" 
+              className="form-control" 
+              placeholder='Descrição'
+            />
           </div>
+          <div className="col-md-6">
+            <label className="form-label">
+              Título: 
+            </label>
+            <input 
+              id="titulo" 
+              type="text" 
+              className="form-control" 
+              placeholder='Título'
+            />
+          </div>
+          <div className="col-md-6">
+              <label className="form-label">Prioridade:</label>
+              <select id="prioridade" className="form-select">
+                <option defaultValue="0">Selecione...</option>
+                <option value="1">Baixa</option>
+                <option value="2">Normal</option>
+                <option value="3">Alta</option>
+              </select>
+          </div>
+          
           <hr />
           <div className='col-12'>
             <button 
@@ -54,13 +94,13 @@ function App() {
                   <div className= "d-flex justify-content-between">
                     <h5 className='card-tittle'>
                     <span className="badge bg-secondary me-1">{ativ.id}</span>
-                    - título
+                    - {ativ.titulo}
                     </h5>
                     <h6>
                       Prioridade: 
                       <span className='ms-1 text-black'>
                         <i className='me-1 far fa-smile'></i>
-                        Normal
+                        {ativ.prioridade}
                       </span>
                     </h6>
                   </div>
