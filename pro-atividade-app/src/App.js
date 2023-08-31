@@ -6,9 +6,9 @@ import './App.css';
 let initialState = [
   {
     id: 1,
-    prioridade: '1',
+    prioridade: '',
     titulo: 'Primeira atividade',
-    descrição: 'Primeira atividade',
+    descrição: 'Descreva aqui a atividade',
   },
 ]
 
@@ -42,19 +42,20 @@ function App() {
     }
   }
 
-  function rostoPrioridade(param) {
+  function rostoPrioridade(param, icone) {
     switch(param) {
       case '1':
-        return 'smile'
+        return icone ? 'smile': 'success'
       case '2':
-        return 'meh'
+        return icone ? 'meh': 'dark'
       case '3':
-        return 'frown'
+        return icone ? 'frown': 'warning'
       default:
         return 'Não Definido'
     }
   }
-
+  
+  
   return (
     <>
       <div className="div justify-content-center ms-5 me-5 pt-5">
@@ -112,9 +113,9 @@ function App() {
           </div>
         </form>
 
-        <div className="mt-3">
+        <div className="mt-3"  >
             {atividades.map((ativ,index) => (
-              <div key={index} className="card mb-2 shadow-sm">
+              <div key={index} className={"card mb-2 shadow-sm border-"+ rostoPrioridade(ativ.prioridade)}>
                 <div className="card-body">
                   <div className= "d-flex justify-content-between">
                     <h5 className='card-tittle'>
@@ -124,7 +125,12 @@ function App() {
                     <h6>
                       Prioridade: 
                       <span className='ms-1 text-black'>
-                        <i className={'me-1 far fa-' + rostoPrioridade(ativ.prioridade) }></i>
+                        <i 
+                          className={
+                            'me-1 far fa-' + 
+                            rostoPrioridade(ativ.prioridade, true) 
+                          }
+                        ></i>
                         {prioridadeLabel(ativ.prioridade)}
                       </span>
                     </h6>
