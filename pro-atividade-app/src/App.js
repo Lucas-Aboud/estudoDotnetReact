@@ -29,6 +29,10 @@ function App() {
     setAtividades([...atividades, {...atividade}]);
   }
 
+  function deletarAtividades(id) {
+    const atividadesFiltradas = atividades.filter(atividades => atividade.id !== id )
+  }
+
   function prioridadeLabel(param) {
     switch(param) {
       case '1':
@@ -68,7 +72,13 @@ function App() {
               id="id"
               type="text" 
               className="form-control"
+              readOnly
               placeholder='Nº Id...'
+              value= {
+                Math.max.apply(
+                  Math, 
+                  atividades.map((item) => item.id)) +1
+              }
             />
           </div>
           <div className="col-md-6">
@@ -141,7 +151,7 @@ function App() {
                       <i className='fas fa-pen me-2'></i>
                       Editar
                     </button>
-                    <button className="btn btn-sm btn-outline-danger me-2">
+                    <button className="btn btn-sm btn-outline-danger" onClick={}>
                       <i className='fas fa-trash me-2'></i>
                       Deletar
                     </button>
