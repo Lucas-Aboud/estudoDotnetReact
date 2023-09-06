@@ -7,7 +7,8 @@ export default function AtividadesCards(props) {
         <div
           key={index}
           className={
-            "card mb-2 shadow-sm border-" + props.rostoPrioridade(ativ.prioridade)
+            "card mb-2 shadow-sm border-" +
+            props.rostoPrioridade(ativ.prioridade)
           }
         >
           <div className="card-body">
@@ -21,7 +22,8 @@ export default function AtividadesCards(props) {
                 <span className="ms-1 text-black">
                   <i
                     className={
-                      "me-1 far fa-" + props.rostoPrioridade(ativ.prioridade, true)
+                      "me-1 far fa-" +
+                      props.rostoPrioridade(ativ.prioridade, true)
                     }
                   ></i>
                   {props.prioridadeLabel(ativ.prioridade)}
@@ -30,7 +32,12 @@ export default function AtividadesCards(props) {
             </div>
             <p className="card-text">{ativ.descrição}</p>
             <div className="d-flex justify-content-end pt-2 m-0 border-top">
-              <button className="btn btn-sm btn-outline-primary me-2">
+              <button
+                className="btn btn-sm btn-outline-primary me-2"
+                onClick={() => {
+                  props.pegarAtividades(ativ.id);
+                }}
+              >
                 <i className="fas fa-pen me-2"></i>
                 Editar
               </button>

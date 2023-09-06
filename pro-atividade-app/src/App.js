@@ -16,6 +16,7 @@ let initialState = [
 
 function App() {
   const [atividades, setAtividades] = useState(initialState)
+  const [atividade, setAtividade] = useState({})
 
   function addAtividade(e) {
     e.preventDefault();
@@ -34,6 +35,11 @@ function App() {
   function deletarAtividades(id) {
     const atividadesFiltradas = atividades.filter(atividades => atividades.id !== id)
     setAtividades([...atividadesFiltradas])
+  }
+
+  function pegarAtividade(id) {
+    const atividade = atividades.filter(atividades => atividades.id === id)
+    setAtividade(atividade[0])
   }
 
   function prioridadeLabel(param) {
@@ -69,12 +75,14 @@ function App() {
         <AtividadeForm
           addAtividade={addAtividade}
           atividades={atividades}
+          atividadeSelecionada={atividade}
         />
         <AtividadesCards
           atividades={atividades}
           deletarAtividades={deletarAtividades}
           rostoPrioridade={rostoPrioridade}
           prioridadeLabel={prioridadeLabel}
+          pegarAtividade={pegarAtividade}
         />
       </div>
     </>
