@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function AtividadesCards(props) {
+
   return (
     <div className="mt-3">
       {props.atividades.map((ativ, index) => (
@@ -35,7 +36,7 @@ export default function AtividadesCards(props) {
               <button
                 className="btn btn-sm btn-outline-primary me-2"
                 onClick={() => {
-                  props.pegarAtividades(ativ.id);
+                  props.pegarAtividade(ativ.id);
                 }}
               >
                 <i className="fas fa-pen me-2"></i>
