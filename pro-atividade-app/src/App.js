@@ -22,7 +22,10 @@ function App() {
     e.preventDefault();
 
     const atividade = {
-      id: document.getElementById('id').value,
+      id: Math.max.apply(
+          Math,
+          atividades.map((item) => item.id)
+        ) + 1,
       prioridade: document.getElementById('prioridade').value,
       titulo: document.getElementById('titulo').value,
       descrição: document.getElementById('descrição').value,

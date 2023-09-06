@@ -9,15 +9,12 @@ export default function AtividadeForm(props) {
     setAtividade({ ...atividade, [name]: value });
   };
 
-  /* Math.max.apply(
-    Math,
-    props.atividades.map((item) => item.id)
-  ) + 1 */
+  
 
   return (
     <div>
       <form className="row g-3">
-        <div className="col-md-6">
+        {/* <div className="col-md-6">
           <label className="form-label">ID:</label>
           <input
             name="id"
@@ -28,7 +25,7 @@ export default function AtividadeForm(props) {
             placeholder="Nº Id..."
             value={atividade.id}
           />
-        </div>
+        </div> */}
         <div className="col-md-6">
           <label className="form-label">Título:</label>
           <input
@@ -39,18 +36,6 @@ export default function AtividadeForm(props) {
             className="form-control"
             placeholder="Título"
             value={atividade.titulo}
-          />
-        </div>
-        <div className="col-md-6">
-          <label className="form-label">Descrição:</label>
-          <input
-            name="descrição"
-            id="descrição"
-            onChange={inputTextHandler}
-            type="text"
-            className="form-control"
-            placeholder="Descrição"
-            value={atividade.descrição}
           />
         </div>
         <div className="col-md-6">
@@ -67,6 +52,18 @@ export default function AtividadeForm(props) {
             <option value="2">Normal</option>
             <option value="3">Alta</option>
           </select>
+        </div>
+        <div className="col-md-12">
+          <label className="form-label">Descrição:</label>
+          <textarea
+            name="descrição"
+            id="descrição"
+            onChange={inputTextHandler}
+            type="text"
+            className="form-control"
+            placeholder="Descrição"
+            value={atividade.descrição}
+          />
         </div>
         <hr />
         <div className="col-12">
