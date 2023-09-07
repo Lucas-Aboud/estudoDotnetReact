@@ -27,7 +27,7 @@ export default function AtividadesCards(props) {
                       props.rostoPrioridade(ativ.prioridade, true)
                     }
                   ></i>
-                  {props.prioridadeLabel(ativ.prioridade)}
+                  {props.prioridadeLabel(ativ.prioridade, true)}
                 </span>
               </h6>
             </div>

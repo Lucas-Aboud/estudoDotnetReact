@@ -22,11 +22,21 @@ export default function AtividadeForm(props) {
   };
 
   const handleCancelar = (e) => {
+    e.preventDefault();
+    props.cancelarAtividade()
+
+    setAtividade(atividadeInicial);
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault()
-   // cancelarAtividade()
-    
-   setAtividade(atividadeInicial)
-  } 
+
+    if (props.atividadeSelecionada.id !== 0)
+      props.atualizarAtividade(atividade)
+    else 
+      props.addAtividade(atividade)
+    setAtividade(atividadeInicial)
+  }
 
   function atividadeAtual() {
     if (props.atividadeSelecionada.id !== 0) {
@@ -37,11 +47,11 @@ export default function AtividadeForm(props) {
   }
 
   return (
-    
-    <div>
-      <>
-      <h1 className="justify-content-center-aling">Atividade {atividade.id !== 0 ? atividade.id : ''}</h1>
-      <form className="row g-3">
+    <>
+      <h1>
+        Atividade {atividade.id !== 0 ? atividade.id : ""}
+      </h1>
+      <form className="row g-3" onSubmit={handleSubmit}>
         <div className="col-md-6">
           <label className="form-label">Título:</label>
           <input
@@ -84,19 +94,13 @@ export default function AtividadeForm(props) {
         <hr />
         <div className="col-12">
           {atividade.id === 0 ? (
-            <button
-              className="btn btn-outline-primary"
-              type="submit"
-            >
+            <button className="btn btn-outline-primary" type="submit">
               <i className="fas fa-plus me-2"></i>
               Enviar
             </button>
           ) : (
             <>
-              <button 
-                className="btn btn-outline-success me-2"
-                type="submit"
-              >
+              <button className="btn btn-outline-success me-2" type="submit">
                 <i className="fa-solid fa-check me-2"></i>
                 Atualizar
               </button>
@@ -111,7 +115,6 @@ export default function AtividadeForm(props) {
           )}
         </div>
       </form>
-      </>
-    </div>
+    </>
   );
 }

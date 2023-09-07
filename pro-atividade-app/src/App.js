@@ -1,38 +1,36 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import AtividadeForm from './components/AtividadeForm';
 import AtividadesCards from './components/AtividadesCards';
 
 
-let initialState = [
-  {
-    id: 1,
-    prioridade: '',
-    titulo: 'Primeira atividade',
-    descrição: 'Descreva aqui a atividade',
-  },
-]
+
 
 function App() {
-  const [atividades, setAtividades] = useState(initialState)
-  const [atividade, setAtividade] = useState({})
+  const [index, setIndex] = useState(0)
+  const [atividades, setAtividades] = useState([])
+  const [atividade, setAtividade] = useState({id: 0})
 
-  function addAtividade(e) {
-    e.preventDefault();
+  useEffect(() => {
+    atividades.length <= 0 ? setIndex(1) :
+      setIndex(Math.max.apply(
+        Math,
+        atividades.map((item) => item.id)) + 1)
+  }, [atividades])
 
-    const atividade = {
-      id: Math.max.apply(
-          Math,
-          atividades.map((item) => item.id)
-        ) + 1,
-      prioridade: document.getElementById('prioridade').value,
-      titulo: document.getElementById('titulo').value,
-      descrição: document.getElementById('descrição').value,
+  function addAtividade(ativ) {
+    setAtividades([...atividades, { ...ativ, id: index }]);
+  }
 
-    }
-    console.log(atividades);
-    setAtividades([...atividades, { ...atividade }]);
+  function cancelarAtividade() {
+    setAtividade({ id: 0 })
+
+  }
+
+  function atualizarAtividade(ativ) {
+    setAtividades(atividades.map((item) => (item.id === ativ.id ? ativ : item)))
+    setAtividade({ id: 0 })
   }
 
   function deletarAtividades(id) {
@@ -79,6 +77,8 @@ function App() {
           addAtividade={addAtividade}
           atividades={atividades}
           atividadeSelecionada={atividade}
+          atualizarAtividade={atualizarAtividade}
+          cancelarAtividade={cancelarAtividade}
         />
         <AtividadesCards
           atividades={atividades}
