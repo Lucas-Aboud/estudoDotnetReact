@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {}
+    "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {
+    "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
+        "projectUniqueName": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
         "projectName": "ProAtividade.API",
-        "projectPath": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
+        "projectPath": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\obj\\",
+        "outputPath": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,26 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"

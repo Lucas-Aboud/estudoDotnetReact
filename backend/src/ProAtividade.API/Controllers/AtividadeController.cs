@@ -34,8 +34,8 @@ namespace ProAtividade.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public Atividade put(int id, Atividade atividade) {
-            atividade.Id = atividade.Id + 1;
+        public Atividade Put(int id, Atividade atividade) {
+            atividade.Id++;
             return atividade;
 
         }
