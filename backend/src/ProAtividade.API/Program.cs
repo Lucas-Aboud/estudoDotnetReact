@@ -18,11 +18,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<DataContext>(opition => opition.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
+builder.Services.AddCors();
 
 builder.Services.AddControllers()
-    .AddJsonOptions(options => 
+    .AddJsonOptions(options =>
         {
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
         }
     );
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -35,12 +36,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+
     app.UseSwaggerUI(options =>
-{
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
-});
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+        options.RoutePrefix = string.Empty;
+    });
 }
+
+app.UseCors(option => option.AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowAnyOrigin());
 
 app.UseHttpsRedirection();
 

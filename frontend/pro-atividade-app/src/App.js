@@ -3,20 +3,31 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import AtividadeForm from './components/AtividadeForm';
 import AtividadesCards from './components/AtividadesCards';
+import api from './API/atividade'
 
-
-
-
-function App() {
-  const [index, setIndex] = useState(0)
-  const [atividades, setAtividades] = useState([])
-  const [atividade, setAtividade] = useState({id: 0})
-
-  useEffect(() => {
-    atividades.length <= 0 ? setIndex(1) :
+/* atividades.length <= 0 ? setIndex(1) :
       setIndex(Math.max.apply(
         Math,
         atividades.map((item) => item.id)) + 1)
+
+ */
+
+function App() {
+  const [index] = useState(0)
+  const [atividades, setAtividades] = useState([])
+  const [atividade, setAtividade] = useState({id: 0})
+
+  const pegaTodasAtividades = () => {
+    const response = api.get('atividade')
+    return response.data
+  }
+
+  useEffect(() => {
+    const getAtividades = () => {
+      const todasAtividades = pegaTodasAtividades()
+      if (todasAtividades) setAtividades(todasAtividades)
+    }
+    getAtividades()
   }, [atividades])
 
   function addAtividade(ativ) {

@@ -10,7 +10,7 @@ const atividadeInicial = {
 export default function AtividadeForm(props) {
   const [atividade, setAtividade] = useState(atividadeAtual());
 
-  useEffect(() => {
+  useEffect(() => { 
     if (props.atividadeSelecionada.id !== 0)
       setAtividade(props.atividadeSelecionada);
   }, [props.atividadeSelecionada]);
