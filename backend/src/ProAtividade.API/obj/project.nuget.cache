@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IMyCAjvvh2H4E76hoIu5BRALtP1Fi5LZ3+VkFQ6DugcR1Moc+f3c54PWPs1UG6j4qJdWsxtPlQOSnrB3Zq2PoQ==",
+  "dgSpecHash": "rfQEYQ70X8GhMy0IXa5c1nhYhwjDpedTL3xpGTxIfZkkI0y4NULYHqVvgTuF5ba1dwDArLUqnnLOACWSogD0VA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
+  "projectFilePath": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lucas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\lucas\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.10\\microsoft.data.sqlite.core.7.0.10.nupkg.sha512",

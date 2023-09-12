@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {}
+    "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {}
   },
   "projects": {
-    "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {
+    "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
+        "projectUniqueName": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
         "projectName": "ProAtividade.API",
-        "projectPath": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
+        "projectPath": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\ProAtividade.API.csproj",
         "packagesPath": "C:\\Users\\lucas\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\obj\\",
+        "outputPath": "C:\\Users\\lucas\\Desktop\\estudoDotnetReact\\backend\\src\\ProAtividade.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"

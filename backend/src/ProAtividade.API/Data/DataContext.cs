@@ -9,7 +9,7 @@ namespace ProAtividade.API.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> opitions) : base(opitions )
+        public DataContext(DbContextOptions<DataContext> opitions) : base(opitions)
         {
             
         }
